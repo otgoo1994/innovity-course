@@ -405,6 +405,7 @@
 	 align-items: center;
 	 width: 100%;
 	 height: 100vh;
+	 position: relative;
 }
  br.pc {
 	 display: block;
@@ -425,12 +426,67 @@
 	font-weight: 400;
 }
 
+.card {
+	background-color: #FFFFFF60;
+	padding: 20px;
+	border-radius: 15px;
+}
+
+.faq .program {
+	display: flex;
+	margin-top: 20px;
+	width: 40%;
+	gap: 20px;
+}
+
+.faq .program .child {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.faq .program .child table {
+	width: 100%;
+}
+
+.faq .program .child .special {
+	padding: 20px;
+	border: 1px solid rgb(128, 128, 128, 0.5);
+	margin: 20px 0;
+	border-radius: 10px;
+}
+
+.faq .program .child .schedule {
+	margin-top: 20px;
+}
+
+.faq .program .child .sub-title {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 20px;
+	font-weight: 500;
+}
+.faq .program .child li {
+	line-height: 20px;
+	margin-top: 5px;
+}
+.faq .program .child li span {
+	font-weight: 500;
+}
+
 .acc-container {
 	width: 50%;
 	margin-top: 50px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+}
+
+.divider {
+	width: 100%;
+	height: 1px;
+	background-color: rgb(128, 128, 128, 0.5);
 }
 
 .acc-container .accordion {
@@ -484,7 +540,10 @@
 	height: 200px;
 }
 
-
+.copyright {
+	position: absolute;
+	bottom: 2%;
+}
 
  @media (max-width: 980px) {
 	body {
@@ -671,6 +730,20 @@
 		font-weight: 400;
 		line-height: 28px;
 		display: block;
+	}
+
+	.faq .program {
+		flex-direction: column;
+		width: 90%;
+		margin-bottom: 100px;
+	}
+
+	.faq .program .child {
+		width: 100%;
+	}
+
+	.copyright {
+		display: none;
 	}
 }
  
