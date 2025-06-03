@@ -70,6 +70,60 @@
             border-radius: 20px;
             margin: 20px 0;
         }
+
+        .item-body.form {
+            justify-content: center;
+        }
+
+        .item-body form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        form input {
+            background: transparent;
+            padding: 10px;
+            padding-left: 20px;
+            border-radius: 10px;
+            border: 1px solid grey;
+            outline: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        form .form-item {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        form .form-item svg {
+            position: absolute;
+            right: 3%;
+            top: 55%;
+            /* transform: translateY(-0%); */
+        }
+
+        form select {
+            background: transparent;
+            padding: 10px 20px;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 10px;
+            appearance: none;
+            outline: none;
+        }
+
+        form select option {
+            color: #000;
+            background-color: #EBEBEB;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 20px;
+        }
+
         table {
             width: 100%;
             border-spacing: 0;
@@ -100,9 +154,28 @@
             margin-left: 10px;
         }
 
+        a.register {
+            padding: 15px 10px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e6b938;
+            text-decoration: none;
+            color: #000;
+        }
+
         @media (max-width: 900px) {
             .container {
                 width: 90vw;
                 padding: 0;
             }
+
+            .item-body form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
         }
