@@ -129,7 +129,9 @@ const setProperty = () => {
 const bind = () => {
   // document.body.scrollTop = 0;
 
-  el.logo.addEventListener('click', handler.menuClick);
+  if (el.logo) {
+    el.logo.addEventListener('click', handler.menuClick);
+  }
   el.menu.forEach((element, idx) => {
     element.setAttribute('idx', idx);
     element.addEventListener('click', handler.menuClick);
