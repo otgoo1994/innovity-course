@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js" integrity="sha512-WFeBxQtM/n6U8/Nd0Hz/Hq7n75NImbzM7Kc0y/4kE0kHnH1Be+nzm32RwbGoDsW1D9fjjPvI8LIWxLrZhxew/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- <script type="module" src="./assets/js/index.js"></script> -->
+  <script type="module" src="./assets/js/firebase.js"></script>
   <title>Innovity.</title>
   <link rel="icon" href="./assets/image/logo-course-500x500.jpg" type="image/x-icon" />
 </head>
@@ -33,22 +33,22 @@
         <h2>БҮРТГҮҮЛЭХ</h2>
         <div class="item">
             <div class="item-body form">
-                <form action="#">
+                <form action="#" id="register">
                     <div class="form-item">
                         <label for="lastname">Овог</label>
-                        <input type="text" id="lastname" placeholder="Овог">
+                        <input type="text" id="lastname" placeholder="Овог" required>
                     </div>
                     <div class="form-item">
                         <label for="name">Нэр</label>
-                        <input type="text" id="name" placeholder="Нэр">
+                        <input type="text" id="name" placeholder="Нэр" required>
                     </div>
                     <div class="form-item">
                         <label for="phone">Утасны дугаар</label>
-                        <input type="text" id="phone" placeholder="Утасны дугаар">
+                        <input type="text" id="phone" placeholder="Утасны дугаар" required>
                     </div>
                     <div class="form-item">
                         <label for="email">Цахим хаяг</label>
-                        <input type="email" id="email" placeholder="Цахим хаяг">
+                        <input type="email" id="email" placeholder="Цахим хаяг" required>
                     </div>
                     <div class="form-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="3%" viewBox="0 0 512 512">
@@ -57,8 +57,8 @@
                         <label for="student-type">Би одоогоор</label>
                         <select name="student-type" id="student-type">
                             <option value="student">Сурагч</option>
-                            <option value="student">Оюутан</option>
-                            <option value="student">Ажилчин</option>
+                            <option value="scholar">Оюутан</option>
+                            <option value="employee">Ажилчин</option>
                         </select>
                     </div>
                     <div class="form-item">
@@ -67,50 +67,32 @@
                         </svg>
                         <label for="student-type">Төлбөрийн төрөл</label>
                         <select name="payment-type" id="payment-type">
-                            <option value="student">3 сараар нь төлөх</option>
-                            <option value="student">Сар сард нь хувааж төлөх</option>
+                            <option value="3-month">3 сараар нь төлөх</option>
+                            <option value="1-month">Сар сард нь хувааж төлөх</option>
                         </select>
                     </div>
 
-                    <a href="#" class="register">
+                    <button type="submit" class="register">
                         ҮРГЭЛЖЛҮҮЛЭХ
-                    </a>
+                    </button>
                 </form>
             </div>
         </div>
     </div>
   </div>
 
-  <!-- Firebase App (the core Firebase SDK) -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>  -->
+  <div class="notification" id="success">
+    <div class="notification-body">
+        <div class="content">
+            <img src="./assets/image/check.png" alt="">
+            <p>АМЖИЛТТАЙ БҮРТГЭГДЛЭЭ</p>
+            <span>Бид тантай эргэн холбогдох<br>болно баярлалаа. </span>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
-    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDeE7aEfbz5eIAHYeAYkyhuVGRhdDcHo3s",
-    authDomain: "innovity-c493e.firebaseapp.com",
-    projectId: "innovity-c493e",
-    storageBucket: "innovity-c493e.firebasestorage.app",
-    databaseURL: "https://innovity-c493e-default-rtdb.asia-east2.firebasedatabase.app",
-    messagingSenderId: "468348927406",
-    appId: "1:468348927406:web:092aa892040593577c1c3f",
-    measurementId: "G-9113X0DW53"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-  
-
-  setTimeout(() => {
-    set(ref(db, 'default/register'), {
-      name: "Alice",
-      age: 30
-    });
-  }, 3000);
-  
-</script>
+            <div class="close">
+                <img src="./assets/image/close.png" class="close-btn" alt="">
+            </div>
+        </div>
+    </div>
+  </div>
 </body>
 </html>
