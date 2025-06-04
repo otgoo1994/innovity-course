@@ -80,5 +80,37 @@
         </div>
     </div>
   </div>
+
+  <!-- Firebase App (the core Firebase SDK) -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>  -->
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDeE7aEfbz5eIAHYeAYkyhuVGRhdDcHo3s",
+    authDomain: "innovity-c493e.firebaseapp.com",
+    projectId: "innovity-c493e",
+    storageBucket: "innovity-c493e.firebasestorage.app",
+    databaseURL: "https://innovity-c493e-default-rtdb.asia-east2.firebasedatabase.app",
+    messagingSenderId: "468348927406",
+    appId: "1:468348927406:web:092aa892040593577c1c3f",
+    measurementId: "G-9113X0DW53"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  
+
+  setTimeout(() => {
+    set(ref(db, 'default/register'), {
+      name: "Alice",
+      age: 30
+    });
+  }, 3000);
+  
+</script>
 </body>
 </html>
